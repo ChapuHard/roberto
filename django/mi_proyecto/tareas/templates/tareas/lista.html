@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Mis Tareas</h1>
+    <ul>
+        {% for tarea in tareas %}
+            <li>
+                {{ tarea.titulo }} 
+                {% if tarea.completada %} ✅ {% else %} ❌ {% endif %}
+            </li>
+        {% empty %}
+            <li>No hay tareas todavía</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
